@@ -4,6 +4,8 @@ class Trekant:
     def __init__(self, vinkel, længde):
         self.vinkel = vinkel
         self.længde = længde
+        self.area = 0
+        self.perimeter = 0
 
     def løsret(self):
         while 0 in self.vinkel or 0 in self.længde:
@@ -11,6 +13,23 @@ class Trekant:
             self.retberegning()
             print(self.vinkel)
             print(self.længde)
+        self.retarea()
+        self.omkreds()
+    
+
+
+    def retarea(self):
+        
+        længde_a = self.længde[0]
+        længde_b = self.længde [1]
+        self.area = længde_a*længde_b*0.5
+    
+
+    def omkreds(self):
+        længde_a = self.længde[0]
+        længde_b = self.længde [1]
+        længde_c = self.længde[2]
+        self.perimeter = længde_a + længde_b + længde_c
         
     
     def retukendtv(self):
@@ -129,3 +148,5 @@ user_trekant = Trekant(user_vinkler, user_længder)
 user_trekant.løsret()
 print ( f'Vinkel A:{user_trekant.vinkel[0]} Vinkel B: {user_trekant.vinkel[1]} Vinkel C: {user_trekant.vinkel[2]}')
 print(f'a: {user_trekant.længde[0]} b: {user_trekant.længde[1]} c: {user_trekant.længde[2]}')
+print(f'areal: {user_trekant.area}')
+print(f'omkreds: {user_trekant.perimeter}')
